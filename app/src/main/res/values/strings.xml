@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecargolApp</string>
+    <string name="action_settings">Configuració</string>
+    <string name="section_format">Prova de text de l\'aplicació: %1$d</string>
+    <string name="title_tab1">Qui Som</string>
+    <string name="title_tab2">Localització</string>
+    <string name="title_tab3">Suggeriments</string>
+</resources>
