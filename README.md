@@ -1,0 +1,2 @@
+# RecargolApp
+Aplicació Recargolats
