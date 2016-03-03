@@ -7,6 +7,10 @@
     <string name="title_tab2">Localització</string>
     <string name="title_tab3">Suggeriments</string>
 
+    <string name="info_penya">Aquest 2016 serà el desè any que la colla Los Recargolats participa a l’Aplec del Caragol amb moltes ganes de gresca! Sota la direcció del nostre cap de colla, l’Oriol Plens, som una colla de gent jove amb força anys a l’esquena participant en diferents edicions de l’Aplec.</string>
+    <string name="info_penya1">Ens agrada la marxeta, la bona teca i la pillera. Olelé! Olalà! Ser recargolat, lo millor que hi ha!</string>
+    <string name="info_penya2">Any de fundació: 2007</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
