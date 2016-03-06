@@ -34,7 +34,6 @@ public class MapFragment_tab2 extends Fragment implements OnMapReadyCallback {
     private String mParam1;
     private String mParam2;
     private static GoogleMap mMap;
-    private static Double latitude, longitude;
     private static View view;
     private static final int REQUEST_ACCESS_FINE_LOCATION = 0;
 
@@ -75,10 +74,6 @@ public class MapFragment_tab2 extends Fragment implements OnMapReadyCallback {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_map_frament_tab2, container, false);
-        // Passing harcoded values for latitude & longitude. Please change as per your need. This is just used to drop a Marker on the Map
-        latitude = 26.78;
-        longitude = 72.56;
-
         SupportMapFragment mapFragment = (SupportMapFragment) this.getChildFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -97,7 +92,7 @@ public class MapFragment_tab2 extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        enableMyLocation();
+//        enableMyLocation();
 
         if (ActivityCompat.checkSelfPermission(this.getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling

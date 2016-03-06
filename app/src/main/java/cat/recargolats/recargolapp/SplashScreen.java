@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.os.Handler;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class SplashScreen extends AppCompatActivity {
 
     // Temporizador para la pantalla de bienvenida
@@ -15,14 +18,19 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        new Handler().postDelayed(new Runnable() {
+        TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(SplashScreen.this, MainActivity.class);
+                Intent mainIntent = new Intent(getApplicationContext(),
+                        MainActivity.class);
                 startActivity(mainIntent);
+                //Destruimos esta activity para prevenit
+                //que el usuario retorne aqui presionando el boton Atras.
                 finish();
             }
-        }, SPLASH_TIEMPO);
+        };
+
+        Timer timer = new Timer();
+        timer.schedule(task, SPLASH_TIEMPO);
     }
 }
