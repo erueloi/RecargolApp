@@ -60,34 +60,34 @@ public class RecargolApplication extends Application {
                 // Enable user notifications
                 airship.getPushManager().setUserNotificationsEnabled(true);
 
-//                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//                boolean isFirstRun = preferences.getBoolean(FIRST_RUN_KEY, true);
-//                if (isFirstRun) {
-//                    preferences.edit().putBoolean(FIRST_RUN_KEY, false).apply();
-//                }
-//
-//                configureAirship(airship, isFirstRun);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                boolean isFirstRun = preferences.getBoolean(FIRST_RUN_KEY, true);
+                if (isFirstRun) {
+                    preferences.edit().putBoolean(FIRST_RUN_KEY, false).apply();
+                }
+
+                configureAirship(airship, isFirstRun);
             }
         });
     }
-}
 
-//    /**
-//     * Called when UAirship is finished taking off.
-//     * @param airship The UAirship singleton.
-//     * @param isFirstRun Flag indicating if this is a first app run.
-//     */
-//    private void configureAirship(UAirship airship, boolean isFirstRun) {
-//        // Customize the notification factory with the
-//        DefaultNotificationFactory factory = new DefaultNotificationFactory(this);
-//        factory.setColor(ContextCompat.getColor(this, R.color.color_primary));
-//        factory.setSmallIconId(R.drawable.ic_notification);
-//
-//        // Set the custom factory
-//        airship.getPushManager().setNotificationFactory(factory);
-//
-//        // Enable user notifications by default on first run
-//        if (isFirstRun) {
-//            airship.getPushManager().setUserNotificationsEnabled(true);
-//        }
-//    }
+    /**
+     * Called when UAirship is finished taking off.
+     * @param airship The UAirship singleton.
+     * @param isFirstRun Flag indicating if this is a first app run.
+     */
+    private void configureAirship(UAirship airship, boolean isFirstRun) {
+        // Customize the notification factory with the
+        DefaultNotificationFactory factory = new DefaultNotificationFactory(this);
+        factory.setColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        factory.setSmallIconId(R.drawable.ic_notification_logo);
+
+        // Set the custom factory
+        airship.getPushManager().setNotificationFactory(factory);
+
+        // Enable user notifications by default on first run
+        if (isFirstRun) {
+            airship.getPushManager().setUserNotificationsEnabled(true);
+        }
+    }
+}
